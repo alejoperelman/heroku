@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Informacion Servidor</h1>
+            <% if (procesos) { %>
+                    <div class="row">
+                      <div class="col">
+                            <p>Id del Proceso: <b> <%= procesos.idproc %> </b></p>
+                            <p>Sistema operativo: <b><%= procesos.plataforma %></b></p>
+                            <p>Version de node: <b><%= procesos.vnode %></b></p>
+                            <p>Direccion actual del trabajo: <b><%= procesos.carpeta %></b></p>
+                            <p>Carpeta ejecucion: <b><%= procesos.carpetaejecucion %></b></p>
+                            <p>Memoria usada por rss: <b><%= procesos.memoriarss %></b> MB</p>
+                            <p>Memoria total: <b><%= procesos.memoriatotal %></b> MB</p>
+                            <p>Memoria usada: <b><%= procesos.memoriaused %></b> MB</p>
+                            <p>Memoria externa: <b><%= procesos.memoriaexternal %></b> MB</p>
+                            <p>Memoria buffer: <b><%= procesos.memoriabuffer %></b> MB</p>
+                            <p>Cantidad de procesadores: <b><%= procesos.cpucont %></b> CPU</p>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <h2>No hay datos</h2>
+                <% } %>
+            </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
+
+
+

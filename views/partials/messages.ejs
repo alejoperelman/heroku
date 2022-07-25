@@ -1,0 +1,27 @@
+<h1>Mensajes</h1>
+<% if (listaMensajes.length > 0) { %>
+        <div class="row">
+          <div class="col">
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">eMail</th>
+                            <th scope="col">Mensaje</th>
+                            <th scope="col">Fecha</th>
+                        </tr>
+                        </thead>
+                    <tbody>
+                        <%  listaMensajes.forEach(function(messages){ %>
+                            <tr>
+                                <th scope="row" style="color:blue;" ><%= messages %></th>
+                                <td style="color:brown;"><%= messages.mensaje %></td>
+                                <td style="color:green; font-style: italic;"><%= messages.fecha %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+            </table>
+          </div>
+        </div>
+<% } else { %>
+        <h2>No hay mensajes ingresados</h2>
+<% } %>

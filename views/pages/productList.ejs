@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Listado de Productos</h1>
+            <% if (listaProductos.length > 0) { %>
+                    <div class="row">
+                      <div class="col">
+                        <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">Producto</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Img</th>
+                                    </tr>
+                                    </thead>
+                                <tbody>
+                                    <%  listaProductos.forEach(function(producto){ %>
+                                        <tr>
+                                            <th scope="row"><%= producto.id %></th>
+                                            <td><%= producto.nombre %></td>
+                                            <td><%= producto.precio %></td>
+                                            <td><img src="<%= producto.foto %>" class="img-thumbnail" alt="Imagen Producto" width="50" height="50"></td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <h2>No hay productos ingresados</h2>
+                <% } %>
+            </div>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
+
+
+
